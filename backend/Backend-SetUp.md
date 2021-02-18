@@ -1,12 +1,14 @@
-Phase 0: Backend Set Up
+# Phase 0: Backend Set Up
+
 First, you need to setup the backend of your application. This includes installing dependencies, setting up Sequelize, initializing your Express application, connecting Express security middlewares, and testing your server set up.
 
-Backend and Frontend Separation
+## Backend and Frontend Separation
+
 In this project, you will separate the backend Express code from the frontend React code.
 
 Create a folder called authenticate-me and inside of it, create two folders called backend and frontend.
 
-Your file structure should now look like this.
+## Your file structure should now look like this.
 
 authenticate-me
 ├── backend
@@ -21,7 +23,7 @@ build
 Dependencies
 In the backend folder, initialize the server's package.json by running npm init -y.
 
-npm install the following packages as dependencies:
+## npm install the following packages as dependencies:
 
 bcryptjs - password hashing
 cookie-parser - parsing cookies from requests
