@@ -48,18 +48,29 @@ export const signup = (user) => async (dispatch) => {
       password,
     }),
   });
-
-  //   way to test signup
-  // window.store.dispatch(window.sessionActions.signup({
-  //   username: 'NewUser',
-  //   email: 'new@user.io',
-  //   password: 'password'
-  // }));
-
   const data = await response.json();
   dispatch(setUser(data.user));
   return response;
 };
+
+//   way to test signup
+// window.store.dispatch(window.sessionActions.signup({
+//   username: 'NewUser',
+//   email: 'new@user.io',
+//   password: 'password'
+// }));
+
+// logout
+export const logout = () => async (dispatch) => {
+  const response = await csrfFetch("/api/session", {
+    method: "DELETE",
+  });
+  dispatch(removeUser());
+  return response;
+};
+
+//   way to test logout
+// window.store.dispatch(window.sessionActions.logout());
 
 const initialState = { user: null };
 
