@@ -10,12 +10,12 @@ router.use("/users", usersRouter);
 // Test User Auth Middlewares
 // test the setTokenCookie function
 // GET /api/set-token-cookie
-const asyncHandler = require("express-async-handler");
-const { setTokenCookie } = require("../../utils/auth.js");
-const { User } = require("../../db/models");
+// const asyncHandler = require("express-async-handler");
+// const { setTokenCookie } = require("../../utils/auth.js");
+// const { User } = require("../../db/models");
 
-const { restoreUser } = require("../../utils/auth.js");
-const { requireAuth } = require("../../utils/auth.js");
+// const { restoreUser } = require("../../utils/auth.js");
+// const { requireAuth } = require("../../utils/auth.js");
 
 // router.get(
 //   "/set-token-cookie",
@@ -42,4 +42,7 @@ const { requireAuth } = require("../../utils/auth.js");
 //   return res.json(req.user);
 // });
 
+router.post("/test", function (req, res) {
+  res.json({ requestBody: req.body });
+});
 module.exports = router;
