@@ -16,7 +16,7 @@ const removeUser = () => {
     type: REMOVE_USER,
   };
 };
-
+// login
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
   const response = await csrfFetch("/api/session", {
@@ -26,6 +26,36 @@ export const login = (user) => async (dispatch) => {
       password,
     }),
   });
+  const data = await response.json();
+  dispatch(setUser(data.user));
+  return response;
+};
+
+//   way to test login
+// window.store.dispatch(window.sessionActions.login({
+//   credential: 'Demo-lition',
+//   password: 'password'
+// }));
+
+// signup
+export const signup = (user) => async (dispatch) => {
+  const { username, email, password } = user;
+  const response = await csrfFetch("/api/users", {
+    method: "POST",
+    body: JSON.stringify({
+      username,
+      email,
+      password,
+    }),
+  });
+
+  //   way to test signup
+  // window.store.dispatch(window.sessionActions.signup({
+  //   username: 'NewUser',
+  //   email: 'new@user.io',
+  //   password: 'password'
+  // }));
+
   const data = await response.json();
   dispatch(setUser(data.user));
   return response;
