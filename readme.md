@@ -6,7 +6,6 @@ authenticate-me
 ├── backend
 └── frontend
 
-
 ## Create a .gitignore file at the root of the project with the following contents:
 
 node_modules
@@ -15,6 +14,7 @@ build
 .DS_Store
 
 # Dependencies
+
 In the backend folder, initialize the server's package.json by running npm init -y.
 
 npm install the following packages as dependencies:
@@ -51,7 +51,17 @@ DB_HOST=localhost
 JWT_SECRET=«generate_strong_secret_here»
 JWT_EXPIRES_IN=604800
 
+## create a random string using openssl
 
- ## create a random string using openssl 
- (a library that should be installed in your Ubuntu/MacOS shell already). 
- Run openssl rand -base64 10 to generate a random JWT secret.
+(a library that should be installed in your Ubuntu/MacOS shell already).
+Run openssl rand -base64 10 to generate a random JWT secret.
+
+# Frontend Set Up
+
+## Method 2: Use Redux template
+
+Use the create-react-app command from inside your frontend folder to initialize React inside of the frontend folder:
+
+npx create-react-app . --template @appacademy/react-redux-v17 --use-npm
+
+npm start http://localhost:3000
