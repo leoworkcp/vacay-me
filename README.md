@@ -78,19 +78,13 @@ is able to navigate to a spot and add a review for that spot. Without refreshing
 
 ---
 
-Since this was our first project, we had limited experience developing a full
-database schema from the ground up. As we moved through the project, there were
-times when we discovered features would be easier to implement with changes to
-our database schema. We were able to work through this with some minor database
-updates and using eager loading with sequelize queries.
-
 <p> </p>
 
 ### User Reviews
 
 Using AJAX to add user reviews was our first AJAX implementation of dynamic UI and was hard to make it work.
 
-Styling the the website pages using raw CSS was another obstacle we had. There are hundred of lines of code just for the CSS styling. We use mixins Pug templates in order to reuse most of the code for the styling and the html/pug. This save us probably hundred of lines code as well.
+Styling the the website pages using raw CSS was another obstacle I had.
 
 <p> </p>
 
