@@ -65,3 +65,9 @@ Use the create-react-app command from inside your frontend folder to initialize 
 npx create-react-app . --template @appacademy/react-redux-v17 --use-npm
 
 npm start http://localhost:3000
+
+# Heroku setup
+
+npm install -g heroku
+
+heroku git:remote -a vacay-me
