@@ -15,3 +15,8 @@
 .login-btn:hover {
   font-size: 1.1rem;
 }
+
+#root > ul > li > a:nth-child(4) {
+  padding: 12px;
+  float: right;
+}

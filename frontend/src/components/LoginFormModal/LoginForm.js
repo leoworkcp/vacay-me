@@ -63,7 +63,14 @@ function LoginForm() {
               className="demo-login__btn"
               onClick={() => demoUser()}
             >
-              Demo
+              Demo-User
+            </button>
+            <button
+              type="submit"
+              className="demo-login__btn"
+              onClick={() => demoUser()}
+            >
+              Demo-Host
             </button>
           </form>
         </div>

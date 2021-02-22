@@ -17,12 +17,10 @@
 
 .demo-login__btn {
   background-color: rgba(182, 71, 71, 0.596);
-  margin-left: 30px;
+
   margin-bottom: 5px;
 }
 
 .submit-login__btn {
   background-color: rgba(182, 71, 71, 0.596);
-  margin-left: 50px;
-  margin-bottom: 5px;
 }

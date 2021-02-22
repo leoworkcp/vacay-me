@@ -1,43 +1,42 @@
 "use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable("Users", {
+    return queryInterface.createTable("Spots", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      username: {
-        type: Sequelize.STRING(30),
+      title: {
         allowNull: false,
-        unique: true,
+        type: Sequelize.STRING(75),
       },
-      email: {
-        type: Sequelize.STRING(256),
+      description: {
         allowNull: false,
-        unique: true,
-      },
-      hashedPassword: {
-        type: Sequelize.STRING.BINARY,
-        allowNull: false,
-      },
-      favoriteSpotsId: {
         type: Sequelize.STRING(10000),
       },
-      messages: {
-        type: Sequelize.STRING(100000),
+      location: {
+        allowNull: false,
+        type: Sequelize.STRING(500),
       },
-      profilePictureUrl: {
-        type: Sequelize.STRING(256),
+      price: {
+        allowNull: false,
+        type: Sequelize.DECIMAL,
       },
-      spotImageUrl: {
-        type: Sequelize.STRING(100000),
-      },
-      isHost: {
+      availability: {
         allowNull: false,
         type: Sequelize.BOOLEAN,
-        defaultValue: false,
+        defaultValue: true,
+      },
+      hostedDate: {
+        allowNull: false,
+        type: Sequelize.DATEONLY,
+      },
+
+      imageUrl: {
+        allowNull: false,
+        type: Sequelize.STRING(10000),
       },
       createdAt: {
         allowNull: false,
@@ -52,6 +51,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable("Users");
+    return queryInterface.dropTable("Spots");
   },
 };

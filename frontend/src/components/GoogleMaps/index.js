@@ -3,6 +3,8 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
+// import "./GoogleMaps.css";
+
 const containerStyle = {
   width: "400px",
   height: "400px",
@@ -32,16 +34,20 @@ function MyComponent() {
   }, []);
 
   return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={10}
-      onLoad={onLoad}
-      onUnmount={onUnmount}
-    >
-      {/* Child components, such as markers, info windows, etc. */}
-      <></>
-    </GoogleMap>
+    <>
+      <div className="maps-main__container">
+        <GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={10}
+          onLoad={onLoad}
+          onUnmount={onUnmount}
+        >
+          {/* Child components, such as markers, info windows, etc. */}
+          <></>
+        </GoogleMap>
+      </div>
+    </>
   ) : (
     <></>
   );
