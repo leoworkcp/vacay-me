@@ -1,0 +1,36 @@
+.homePage-main__container {
+  font-family: sans-serif;
+  background: url("https://images.unsplash.com/photo-1535961652354-923cb08225a7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZXhvdGljJTIwcGxhY2VzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60")
+    no-repeat 0 0;
+  background-size: cover;
+  z-index: 0;
+}
+
+.homePage-spots__container {
+  height: 768px;
+}
+
+.homePage-spots__container > h2 {
+  color: aliceblue;
+  padding-top: 10px;
+  font-size: 22px;
+  text-align: center;
+}
+
+/* secondary pic */
+
+.homePage-secondary__container {
+  font-family: sans-serif;
+  background: url("https://images.unsplash.com/photo-1482955903579-70929ba3a509?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fGJlYWNoJTIwaG91c2VzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60")
+    no-repeat 0 0;
+  background-size: cover;
+  z-index: 0;
+  height: 768px;
+}
+
+.secondary-spots__container > h2 {
+  color: aliceblue;
+  padding-top: 10px;
+  font-size: 22px;
+  text-align: center;
+}
