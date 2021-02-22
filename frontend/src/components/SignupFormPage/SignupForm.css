@@ -1,4 +1,5 @@
 .body-main__container {
+  /* display: table-footer-group; */
   font-family: sans-serif;
   background: url("https://images.unsplash.com/photo-1521782462922-9318be1cfd04?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1055&q=80")
     no-repeat 0 0;
@@ -7,6 +8,7 @@
 }
 
 .signup-form__container {
+  box-sizing: border-box;
   background-color: aliceblue;
   background-color: rgba(190, 68, 68, 0.308);
   background-blend-mode: overlay;
@@ -18,9 +20,27 @@
 }
 
 .title-main__container {
+  align-content: center;
   font-size: medium;
-  margin-top: auto;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.signup-form__container > form,
+label {
+  display: flex;
+  flex-direction: column;
+  /* margin: auto; */
+  align-items: center;
+}
+
+.signup-form__container > form > button {
+  margin: auto;
+  max-width: 100px;
+  margin-top: 10px;
+}
+
+/* make media query for signup title */
+@media screen {
 }

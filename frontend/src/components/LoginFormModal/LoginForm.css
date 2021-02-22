@@ -1,0 +1,17 @@
+.login-main__container {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.login-form__container > form > label {
+  font-size: 14px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.login-form__container > form > button {
+  background-color: rgba(182, 71, 71, 0.596);
+  margin-left: 106px;
+  margin-bottom: 5px;
+}
