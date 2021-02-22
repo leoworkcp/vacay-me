@@ -4,17 +4,30 @@
     no-repeat 0 0;
   background-size: cover;
   z-index: 0;
+  padding-top: 5px;
 }
 
 .homePage-spots__container {
   height: 768px;
 }
 
+/* playing with letter to make animation */
+.homePage-spots__container > h2:nth-child(2),
+.homePage-spots__container > h2:nth-child(3),
+.homePage-spots__container > h2:nth-child(4),
+.homePage-spots__container > h2:nth-child(5) {
+  display: none;
+}
+
 .homePage-spots__container > h2 {
   color: aliceblue;
   padding-top: 10px;
-  font-size: 22px;
+  font-size: 30px;
   text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+.homePage-spots__container > h2:nth-child(1):hover {
+  padding-top: 25px;
 }
 
 /* secondary pic */
@@ -28,9 +41,16 @@
   height: 768px;
 }
 
-.secondary-spots__container > h2 {
-  color: aliceblue;
-  padding-top: 10px;
-  font-size: 22px;
+.secondary-spots__container > a > h2 {
+  color: rgba(244, 255, 240, 0.87);
+  padding-top: 15px;
+  font-size: 24px;
   text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.secondary-spots__container > a > h2:hover {
+  padding-top: 10px;
+  font-size: 25px;
+  color: #000000;
 }

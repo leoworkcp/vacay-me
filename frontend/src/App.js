@@ -4,8 +4,10 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage";
+import SpotsSearchPage from "./components/SpotsSearchPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import "./index.css";
 
 function App() {
   const dispatch = useDispatch();
@@ -24,6 +26,9 @@ function App() {
           </Route>
           <Route path="/" exact>
             <HomePage />
+          </Route>
+          <Route path="/spots">
+            <SpotsSearchPage />
           </Route>
         </Switch>
       )}
