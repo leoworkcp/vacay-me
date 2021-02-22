@@ -13,7 +13,7 @@ function SpotsSearchPage() {
     <>
       <div className="spotspage-main__container">
         <div className="spots-main__container">
-          <h2>Welcome to VacayMe</h2>
+          <h2>Search for exotic places</h2>
         </div>
       </div>
     </>

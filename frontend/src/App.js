@@ -2,11 +2,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
+import * as sessionActions from "./store/session";
+
 import SignupFormPage from "./components/SignupFormPage";
 import HomePage from "./components/HomePage";
 import SpotsSearchPage from "./components/SpotsSearchPage";
-import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+import GoogleMap from "./components/GoogleMaps";
+
 import "./index.css";
 
 function App() {
@@ -29,6 +32,7 @@ function App() {
           </Route>
           <Route path="/spots">
             <SpotsSearchPage />
+            <GoogleMap />
           </Route>
         </Switch>
       )}

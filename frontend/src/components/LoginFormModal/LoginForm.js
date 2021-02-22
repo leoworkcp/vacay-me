@@ -9,6 +9,13 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
+  const demoUser = () => {
+    const email = "demouser@gmail.com";
+    const userPw = "Demouser123!@#";
+    setPassword(userPw);
+    setCredential(email);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
@@ -48,7 +55,16 @@ function LoginForm() {
                 required
               />
             </label>
-            <button type="submit">Log In</button>
+            <button type="submit" className="submit-login__btn">
+              Log In
+            </button>
+            <button
+              type="submit"
+              className="demo-login__btn"
+              onClick={() => demoUser()}
+            >
+              Demo
+            </button>
           </form>
         </div>
       </div>
