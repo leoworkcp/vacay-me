@@ -10,6 +10,9 @@ const { handleValidationErrors } = require("../../utils/validation");
 
 const router = express.Router();
 
+// aws3 setUp
+const { singlePublicFileUpload, singleMulterUpload } = require("../../awsS3");
+
 const validateSignup = [
   check("email")
     .exists({ checkFalsy: true })
@@ -27,20 +30,43 @@ const validateSignup = [
   handleValidationErrors,
 ];
 
-// Sign up
+// Post /api/users ---Sign up
 router.post(
   "/",
+  singleMulterUpload("image"),
   validateSignup,
   asyncHandler(async (req, res) => {
     const { email, password, username } = req.body;
-    const user = await User.signup({ email, username, password });
+    const profilePictureUrl = await singlePublicFileUpload(req.file);
+    const user = await User.signup({
+      username,
+      email,
+      password,
+      profilePictureUrl,
+    });
 
-    await setTokenCookie(res, user);
+    setTokenCookie(res, user);
 
     return res.json({
       user,
     });
   })
 );
+
+// // Sign up
+// router.post(
+//   "/",
+//   validateSignup,
+//   asyncHandler(async (req, res) => {
+//     const { email, password, username } = req.body;
+//     const user = await User.signup({ email, username, password });
+
+//     await setTokenCookie(res, user);
+
+//     return res.json({
+//       user,
+//     });
+//   })
+// );
 
 module.exports = router;

@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 
 import SignupFormPage from "./components/SignupFormPage";
 import SignupFormHost from "./components/SignupFormHost";
+import CreateUser from "./components/CreateUser";
 import HomePage from "./components/HomePage";
 import SpotsSearchPage from "./components/SpotsSearchPage";
 import Navigation from "./components/Navigation";
@@ -27,6 +28,9 @@ function App() {
         <Switch>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/create/user">
+            <CreateUser />
           </Route>
           <Route path="/host/signup">
             <SignupFormHost />

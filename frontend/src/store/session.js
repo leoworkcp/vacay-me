@@ -4,12 +4,10 @@ import { csrfFetch } from "./csrf";
 const SET_USER = "session/setUser";
 const REMOVE_USER = "session/removeUser";
 
-const setUser = (user) => {
-  return {
-    type: SET_USER,
-    payload: user,
-  };
-};
+const setUser = (user) => ({
+  type: SET_USER,
+  payload: user,
+});
 
 const removeUser = () => {
   return {
@@ -60,6 +58,36 @@ export const signup = (user) => async (dispatch) => {
 //   password: 'password'
 // }));
 
+// aws create user setUp
+export const createUser = (user) => async (dispatch) => {
+  const { images, image, username, email, password } = user;
+  const formData = new FormData();
+  formData.append("username", username);
+  formData.append("email", email);
+  formData.append("password", password);
+
+  // for multiple files
+  if (images && images.length !== 0) {
+    for (var i = 0; i < images.length; i++) {
+      formData.append("images", images[i]);
+    }
+  }
+
+  // for single file
+  if (image) formData.append("image", image);
+
+  const res = await csrfFetch(`/api/users/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+    body: formData,
+  });
+
+  const data = await res.json();
+  dispatch(setUser(data.user));
+};
+
 // logout
 export const logout = () => async (dispatch) => {
   const response = await csrfFetch("/api/session", {
@@ -78,9 +106,13 @@ const sessionReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
     case SET_USER:
+      return { ...state, user: action.payload };
+    // not sure if i have to comment this out
+    case SET_USER:
       newState = Object.assign({}, state);
       newState.user = action.payload;
       return newState;
+    // <------>  //
     case REMOVE_USER:
       newState = Object.assign({}, state);
       newState.user = null;
