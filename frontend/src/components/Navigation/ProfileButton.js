@@ -38,8 +38,18 @@ function ProfileButton({ user }) {
         <ul className="profile-dropdown">
           <li>{user.username}</li>
           <li>{user.email}</li>
+          <div className="profile-main__container">
+            <img
+              style={{ width: "49.99999px" }}
+              src={user.profilePictureUrl}
+              alt="avatar"
+            />
+          </div>
+
           <li>
-            <button onClick={logout}>Log Out</button>
+            <button className="logout-btn" onClick={logout}>
+              Log Out
+            </button>
           </li>
         </ul>
       )}

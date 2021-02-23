@@ -1,6 +1,19 @@
 #root > ul {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 5px 10px 5px;
+}
+
+#root > ul > li > button {
+  border: none;
+}
+
+.profile-dropdown {
+  height: 5px;
+}
+
+.profile-dropdown > li {
+  position: relative;
+  text-align: center;
+  bottom: 38px;
 }
 
 .login-btn {
@@ -19,4 +32,27 @@
 #root > ul > li > a:nth-child(4) {
   padding: 12px;
   float: right;
+}
+
+.profile-main__container > img {
+  position: relative;
+  bottom: 70px;
+  border-radius: 49.99999%;
+  float: right;
+}
+
+.logout-btn {
+  position: relative;
+  bottom: 31px;
+  float: right;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #000000;
+  transition: all 0.2s ease-in-out;
+  border: none;
+  border-radius: 0%;
+}
+
+.logout-btn:hover {
+  font-size: 0.9rem;
 }

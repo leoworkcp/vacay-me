@@ -9,11 +9,14 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
-  const demoUser = () => {
-    const email = "demouser@gmail.com";
-    const userPw = "Demouser123!@#";
-    setPassword(userPw);
+  const email1 = "demouser@gmail.com";
+  const userPw1 = "Demouser123!@#";
+  const email2 = "demo@user.io";
+  const userPw2 = "password";
+
+  const demoUser = (email, password) => {
     setCredential(email);
+    setPassword(password);
   };
 
   const handleSubmit = (e) => {
@@ -61,14 +64,14 @@ function LoginForm() {
             <button
               type="submit"
               className="demo-login__btn"
-              onClick={() => demoUser()}
+              onClick={() => demoUser(email2, userPw2)}
             >
               Demo-User
             </button>
             <button
               type="submit"
               className="demo-login__btn"
-              onClick={() => demoUser()}
+              onClick={() => demoUser(email1, userPw1)}
             >
               Demo-Host
             </button>
