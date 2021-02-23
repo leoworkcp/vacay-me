@@ -5,7 +5,7 @@ import { Redirect } from "react-router-dom";
 // import * as sessionActions from "../../store/session";
 import { createUser } from "../../store/session";
 
-import "./SignupForm.css";
+// import "./SignupFormHost.css";
 
 function SignupFormHost() {
   const dispatch = useDispatch();
@@ -54,9 +54,9 @@ function SignupFormHost() {
 
   return (
     <>
-      <div className="body-main__container">
-        <div className="title-main__container">
-          <h2>Finish signing up</h2>
+      <div className="body-signup__container">
+        <div className="title-signup__container">
+          <h2>Become a Host</h2>
         </div>
         <div className="signup-form__container">
           <form onSubmit={handleSubmit}>
@@ -69,7 +69,7 @@ function SignupFormHost() {
               Email
               <input
                 type="text"
-                placeholder="Email"
+                placeholder="you@yours.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -79,7 +79,7 @@ function SignupFormHost() {
               Username
               <input
                 type="text"
-                placeholder="Username"
+                placeholder="User Name"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
@@ -106,6 +106,7 @@ function SignupFormHost() {
               />
             </label>
             <label>
+              Upload Profile Picture
               <input type="file" onChange={updateFile} />
             </label>
             {/* <label>
