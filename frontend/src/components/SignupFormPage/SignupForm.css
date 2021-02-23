@@ -1,4 +1,4 @@
-.body-main__container {
+.body-signup__container {
   /* display: table-footer-group; */
   font-family: sans-serif;
   background: url("https://images.unsplash.com/photo-1521782462922-9318be1cfd04?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1055&q=80")
@@ -9,36 +9,66 @@
 
 .signup-form__container {
   box-sizing: border-box;
-  background-color: aliceblue;
-  background-color: rgba(190, 68, 68, 0.308);
+  background-color: rgba(0, 0, 0, 0.466);
+  /* background-color: #f5f5f75d; */
   background-blend-mode: overlay;
   width: 800px;
   height: 800px;
   margin: 0 auto;
   text-align: center;
-  color: #000000;
+  color: #f5f5f75d;
+  border-radius: 30px;
 }
 
-.title-main__container {
+.title-signup__container {
   align-content: center;
-  font-size: medium;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.signup-form__container > form,
-label {
+.body-signup__container > .title-signup__container > h2 {
+  color: #1d1d1f;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.signup-form__container > form {
+  height: 800px;
   display: flex;
   flex-direction: column;
-  /* margin: auto; */
   align-items: center;
+  margin-top: 5px;
+}
+
+.signup-form__container > form > label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 17px;
+  font-size: 14px;
+  color: #f5f5f7;
 }
 
 .signup-form__container > form > button {
-  margin: auto;
+  border-radius: 30px;
   max-width: 100px;
-  margin-top: 10px;
+  margin-top: 15px;
+  background-color: #1d1d1fb4;
+  color: #f5f5f7cb;
+  transition: all 0.2s ease-in-out;
+}
+
+.signup-form__container > form > button:hover {
+  font-size: 13px;
+  color: #f5f5f7;
+  background-color: #1d1d1fcc;
+}
+
+.signup-form__container > form > label > input {
+  border-radius: 8px;
+  border-color: #f5f5f75d;
+  color: #f5f5f7;
+  background-color: #1d1d1f00;
 }
 
 /* make media query for signup title */

@@ -54,8 +54,8 @@ function SignupFormPage() {
 
   return (
     <>
-      <div className="body-main__container">
-        <div className="title-main__container">
+      <div className="body-signup__container">
+        <div className="title-signup__container">
           <h2>Finish signing up</h2>
         </div>
         <div className="signup-form__container">
@@ -69,7 +69,7 @@ function SignupFormPage() {
               Email
               <input
                 type="text"
-                placeholder="Email"
+                placeholder="you@yours.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -79,7 +79,7 @@ function SignupFormPage() {
               Username
               <input
                 type="text"
-                placeholder="Username"
+                placeholder="User Name"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
@@ -106,6 +106,7 @@ function SignupFormPage() {
               />
             </label>
             <label>
+              Upload Profile Picture
               <input type="file" onChange={updateFile} />
             </label>
             {/* <label>
