@@ -1,5 +1,16 @@
 #root > ul {
   padding: 10px 5px 10px 5px;
+  color: #f5f5f75d;
+  background: rgba(0, 0, 0, 0.8);
+}
+#root > ul > li > a:nth-child(1):hover {
+  color: #f5f5f7;
+}
+#root > ul > li > a:nth-child(3):hover {
+  color: #f5f5f7;
+}
+#root > ul > li > a:nth-child(4):hover {
+  color: #f5f5f7;
 }
 
 #root > ul > li > button {
@@ -19,7 +30,7 @@
 .login-btn {
   font-size: 1rem;
   background-color: transparent;
-  color: #000000;
+  color: #f5f5f75d;
   transition: all 0.2s ease-in-out;
   border: none;
   border-radius: 0%;
@@ -27,6 +38,7 @@
 
 .login-btn:hover {
   font-size: 1.1rem;
+  color: #f5f5f7;
 }
 
 #root > ul > li > a:nth-child(4) {
@@ -47,7 +59,7 @@
   float: right;
   font-size: 1rem;
   background-color: transparent;
-  color: #000000;
+  color: #f5f5f75d;
   transition: all 0.2s ease-in-out;
   border: none;
   border-radius: 0%;
@@ -55,4 +67,5 @@
 
 .logout-btn:hover {
   font-size: 0.9rem;
+  color: #f5f5f7;
 }

@@ -3,17 +3,23 @@
 import React from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 
-// import "./GoogleMaps.css";
+import "./GoogleMaps.css";
 
 const containerStyle = {
-  width: "400px",
-  height: "400px",
+  width: "830px",
+  height: "1063px",
+  float: "right",
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523,
+  lat: 40.73061,
+  lng: -73.935242,
 };
+
+// const map = {
+//   lat: 40.73061,
+//   lng: -73.935242,
+// };
 
 function MyComponent() {
   const { isLoaded } = useJsApiLoader({
@@ -39,7 +45,7 @@ function MyComponent() {
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={center}
-          zoom={10}
+          zoom={16}
           onLoad={onLoad}
           onUnmount={onUnmount}
         >

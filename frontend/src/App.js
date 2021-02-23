@@ -37,8 +37,8 @@ function App() {
             <HomePage />
           </Route>
           <Route path="/spots">
-            <SpotsSearchPage />
             <GoogleMap />
+            <SpotsSearchPage />
           </Route>
         </Switch>
       )}
