@@ -4,9 +4,10 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 
+// import CreateUser from "./components/CreateUser";
+
 import SignupFormPage from "./components/SignupFormPage";
 import SignupFormHost from "./components/SignupFormHost";
-import CreateUser from "./components/CreateUser";
 import HomePage from "./components/HomePage";
 import SpotsSearchPage from "./components/SpotsSearchPage";
 import Navigation from "./components/Navigation";
@@ -29,16 +30,12 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/create/user">
-            <CreateUser />
-          </Route>
           <Route path="/host/signup">
             <SignupFormHost />
           </Route>
           <Route path="/" exact>
             <HomePage />
           </Route>
-
           <Route path="/spots">
             <SpotsSearchPage />
             <GoogleMap />
