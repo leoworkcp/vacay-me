@@ -19,4 +19,17 @@ router.get(
   })
 );
 
+router.get(
+  "/:id(\\d+)",
+  asyncHandler(async (req, res) => {
+    const spot = await Spot.findOne({
+      where: { id: req.params.id },
+      order: [["createdAt", "DESC"]],
+    });
+    // console.log(spot.id);
+    // console.log(spot.title);
+    res.json(spot);
+  })
+);
+
 module.exports = router;

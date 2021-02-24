@@ -9,6 +9,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import SignupFormHost from "./components/SignupFormHost";
 import HomePage from "./components/HomePage";
 import SpotsSearchPage from "./components/SpotsSearchPage";
+import SpotsPage from "./components/SpotsPage";
 import Navigation from "./components/Navigation";
 import GoogleMap from "./components/GoogleMaps";
 import { useSelector } from "react-redux";
@@ -45,6 +46,9 @@ function App() {
           <Route path="/spots">
             <GoogleMap />
             <SpotsSearchPage spot={spotsListing} />
+          </Route>
+          <Route path="/spots/:id">
+            <SpotsPage spot={spotsListing} />
           </Route>
         </Switch>
       )}
