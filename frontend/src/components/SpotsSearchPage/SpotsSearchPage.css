@@ -104,14 +104,16 @@ h1 {
 }
 
 .main-spots__div-container {
+  margin-left: 25px;
   display: flex;
   justify-content: space-evenly;
+  overflow: scroll;
 }
 
 .div-title__container,
 .div-description__container,
 .div-price__container {
-  margin-left: 10px;
+  margin-left: 55px;
   margin-top: 25px;
   color: red;
 }
