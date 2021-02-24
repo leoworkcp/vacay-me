@@ -1,44 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as spotActions from "../../store/spot";
-// import { Redirect } from "react-router-dom";
-// import * as sessionActions from "../../store/session";
+
 import "./SpotsSearchPage.css";
 
-// import { getspot } from "../../store/spot";
-
 function SpotsSearchPage(spots) {
-  // const spotsListing = useSelector((state) => state.products.spot);
-  // console.log(spotsListing);
-
-  // const dispatch = useDispatch();
-
-  // const [showTitle, setShowTitle] = useState(false);
-
-  // const openTitle = () => {
-  //   if (showTitle) return;
-  //   setShowTitle(true);
-  // };
-
-  // useEffect(() => {
-  //   if (!showTitle) return;
-
-  //   const closeTitle = () => {
-  //     setShowTitle(false);
-  //   };
-
-  //   document.addEventListener("click", closeTitle);
-
-  //   return () => document.removeEventListener("click", closeTitle);
-  // }, [showTitle]);
-  // openTitle();
-  // console.log(showTitle);
-
   console.log(spots);
-  // const spotState = (state) => state.list;
 
-  // console.log("useSelector:", spot);
-
+  // to test fetch
   // useEffect(() => {
   //   const getSpots = async () => {
   //     const res = await fetch(`/api/spots`);
@@ -49,11 +18,6 @@ function SpotsSearchPage(spots) {
   //   getSpots();
   // }, []);
 
-  // const [spots, setSpots] = useState([]);
-
-  // useEffect(() => {
-  //   setSpots(dispatch(getspot()));
-  // }, [dispatch]);
   let data = [];
   const visit = (obj, fn) => {
     const values = Object.values(obj);
@@ -72,8 +36,7 @@ function SpotsSearchPage(spots) {
   // Quick test
   const print = (val) => console.log(val);
   visit(spots, print);
-  // let data = [];
-  // data.push(spots);
+
   console.log(data);
 
   console.log(data[4]);

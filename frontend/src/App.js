@@ -5,7 +5,6 @@ import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import * as spotActions from "./store/spot";
 
-import ProductList from "./src/ProductList";
 import SignupFormPage from "./components/SignupFormPage";
 import SignupFormHost from "./components/SignupFormHost";
 import HomePage from "./components/HomePage";
@@ -17,7 +16,7 @@ import "./index.css";
 
 function App() {
   const spotsListing = useSelector((state) => state.products.spot);
-  console.log(spotsListing);
+
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   const [isListed, setIsListed] = useState(false);
@@ -31,8 +30,8 @@ function App() {
 
   return (
     <>
-      <Navigation isLoaded={isLoaded} />
-      {isLoaded && (
+      <Navigation isLoaded={isLoaded} isListed={isListed} />
+      {isLoaded && isListed && (
         <Switch>
           <Route path="/" exact>
             <HomePage />
@@ -46,9 +45,6 @@ function App() {
           <Route path="/spots">
             <GoogleMap />
             <SpotsSearchPage spot={spotsListing} />
-          </Route>
-          <Route path="/products">
-            <ProductList />
           </Route>
         </Switch>
       )}
