@@ -5,8 +5,6 @@ import * as spotActions from "../../store/spot";
 import "./SpotsSearchPage.css";
 
 function SpotsSearchPage(spots) {
-  console.log(spots);
-
   // to test fetch
   // useEffect(() => {
   //   const getSpots = async () => {
@@ -22,7 +20,7 @@ function SpotsSearchPage(spots) {
   const visit = (obj, fn) => {
     const values = Object.values(obj);
     // const keys = Object.keys(obj);
-    var val;
+
     values.forEach((val) =>
       //  data.push(val)
       val && typeof val === "object" ? visit(val, fn) : data.push(val)
@@ -36,10 +34,10 @@ function SpotsSearchPage(spots) {
   // Quick test
   const print = (val) => console.log(val);
   visit(spots, print);
-
+  console.log(spots);
   console.log(data);
+  // console.log(data[4]);
 
-  console.log(data[4]);
   return (
     <>
       <div className="title-page__container">
