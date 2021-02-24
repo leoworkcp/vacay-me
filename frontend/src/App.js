@@ -31,7 +31,9 @@ function App() {
   return (
     <>
       <Navigation isLoaded={isLoaded} isListed={isListed} />
+   
       {isLoaded && (
+    
         <Switch>
           <Route path="/" exact>
             <HomePage />
