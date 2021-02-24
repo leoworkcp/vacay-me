@@ -3,23 +3,30 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
+import * as spotActions from "./store/spot";
 
-// import CreateUser from "./components/CreateUser";
-
+import ProductList from "./src/ProductList";
 import SignupFormPage from "./components/SignupFormPage";
 import SignupFormHost from "./components/SignupFormHost";
 import HomePage from "./components/HomePage";
 import SpotsSearchPage from "./components/SpotsSearchPage";
 import Navigation from "./components/Navigation";
 import GoogleMap from "./components/GoogleMaps";
-
+import { useSelector } from "react-redux";
 import "./index.css";
 
 function App() {
+  const spotsListing = useSelector((state) => state.products.spot);
+  console.log(spotsListing);
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isListed, setIsListed] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(spotActions.getspot()).then(() => setIsListed(true));
   }, [dispatch]);
 
   return (
@@ -38,7 +45,10 @@ function App() {
           </Route>
           <Route path="/spots">
             <GoogleMap />
-            <SpotsSearchPage />
+            <SpotsSearchPage spot={spotsListing} />
+          </Route>
+          <Route path="/products">
+            <ProductList />
           </Route>
         </Switch>
       )}
