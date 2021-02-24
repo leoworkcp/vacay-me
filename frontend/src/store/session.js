@@ -108,10 +108,10 @@ const sessionReducer = (state = initialState, action) => {
     case SET_USER:
       return { ...state, user: action.payload };
     // not sure if i have to comment this out
-    case SET_USER:
-      newState = Object.assign({}, state);
-      newState.user = action.payload;
-      return newState;
+    // case SET_USER:
+    //   newState = Object.assign({}, state);
+    //   newState.user = action.payload;
+    //   return newState;
     // <------>  //
     case REMOVE_USER:
       newState = Object.assign({}, state);
