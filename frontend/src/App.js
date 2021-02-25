@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
-import * as spotActions from "./store/spot";
+
+import * as spotPageActions from "./store/spotPageReducer";
 
 import SignupFormPage from "./components/SignupFormPage";
 import SignupFormHost from "./components/SignupFormHost";
@@ -16,23 +17,31 @@ import { useSelector } from "react-redux";
 import "./index.css";
 
 function App() {
-  const spotsListing = useSelector((state) => state.products.spot);
-
   const dispatch = useDispatch();
+
+  // spotPage
+  const spotsPageList = useSelector((state) => state.spots.payload);
+  // console.log(spotsPageList);
+  const [isSpotPage, setIsSpotPage] = useState(false);
+
+  useEffect(() => {
+    dispatch(spotPageActions.getOnespot()).then(() => setIsSpotPage(true));
+  }, [dispatch]);
+
+  // search Page
+  const spotsSearchPage = useSelector((state) => state.spots);
+  // console.log(spotsSearchPage);
+
+  // user session
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isListed, setIsListed] = useState(false);
   useEffect(() => {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(spotActions.getspot()).then(() => setIsListed(true));
-  }, [dispatch]);
-
   return (
     <>
-      <Navigation isLoaded={isLoaded} isListed={isListed} />
-      {isLoaded && isListed && (
+      <Navigation isLoaded={isLoaded} isSpotPage={isSpotPage} />
+      {isLoaded && isSpotPage && (
         <Switch>
           <Route path="/" exact>
             <HomePage />
@@ -43,12 +52,15 @@ function App() {
           <Route path="/host/signup">
             <SignupFormHost />
           </Route>
-          <Route path="/spots">
+          <Route path="/spots" exact>
             <GoogleMap />
-            <SpotsSearchPage spot={spotsListing} />
+            <SpotsSearchPage spot={spotsSearchPage} />
           </Route>
-          <Route path="/spots/:id">
-            <SpotsPage spot={spotsListing} />
+          {/* {spotsPageList.map(({ title, id }) => {
+            spotId = id;
+          })} */}
+          <Route path={["/spots/:eachSpotId"]} exact>
+            <SpotsPage />
           </Route>
         </Switch>
       )}

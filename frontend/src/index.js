@@ -10,8 +10,10 @@ import { ModalProvider } from "./context/Modal";
 import configureStore from "./store";
 import { restoreCSRF, csrfFetch } from "./store/csrf";
 import * as sessionActions from "./store/session";
-import * as spotActions from "./store/spot";
 
+// import * as spotActions from "./store/spot";
+
+import * as spotPageActions from "./store/spotPageReducer";
 const store = configureStore();
 
 if (process.env.NODE_ENV !== "production") {
@@ -20,7 +22,8 @@ if (process.env.NODE_ENV !== "production") {
   window.csrfFetch = csrfFetch;
   window.store = store;
   window.sessionActions = sessionActions;
-  window.spotActions = spotActions;
+  // window.spotActions = spotActions;
+  window.spotPageActions = spotPageActions;
 }
 
 function Root() {

@@ -1,42 +1,37 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import * as spotActions from "../../store/spot";
+import { Link, NavLink, useParams } from "react-router-dom";
 
 import "./SpotsSearchPage.css";
 
 function SpotsSearchPage(spots) {
-  // to test fetch
-  // useEffect(() => {
-  //   const getSpots = async () => {
-  //     const res = await fetch(`/api/spots`);
-  //     const jsRes = await res.json();
-  //     // console.log(jsRes.spots);
-  //     setSpots(jsRes);
-  //   };
-  //   getSpots();
-  // }, []);
+  // const { eachSpotId } = useParams();
 
-  let data = [];
-  const visit = (obj, fn) => {
-    const values = Object.values(obj);
-    // const keys = Object.keys(obj);
+  // const visit = (obj, fn) => {
+  //   const values = Object.values(obj);
+  //   // const keys = Object.keys(obj);
+  //   values.forEach((val) =>
+  //     //  data.push(val)
+  //     val && typeof val === "object" ? visit(val, fn) : data.push(val)
+  //   );
+  //   // keys.forEach((val1) =>
+  //   //   val1 && typeof val1 === "object" ? visit(val1, fn) : fn(val1)
+  //   // );
+  // };
+  // // Quick test
+  // const print = (val) => console.log(val);
+  // visit(spots, print);
+  const oneSpot = useSelector((state) => {
+    return state.spots.payload.map((eachSpotId) => state.spots[eachSpotId]);
+  });
 
-    values.forEach((val) =>
-      //  data.push(val)
-      val && typeof val === "object" ? visit(val, fn) : data.push(val)
-    );
-
-    // keys.forEach((val1) =>
-    //   val1 && typeof val1 === "object" ? visit(val1, fn) : fn(val1)
-    // );
-  };
-
-  // Quick test
-  const print = (val) => console.log(val);
-  visit(spots, print);
-  console.log(spots);
-  console.log(data);
-  // console.log(data[4]);
+  // important logs
+  // console.log(spots);
+  // console.log(oneSpot);
+  // let spotId = {};
+  // oneSpot.map((spot) => {
+  //   console.log(spot.id);
+  // });
 
   return (
     <>
@@ -70,209 +65,48 @@ function SpotsSearchPage(spots) {
             </button>
           </div>
         </div>
-
-        <div className="spots-main__container">
-          <div className="show-title__container">
-            <div className="spots-titles__container">
-              <h3>{`New York`}</h3>
-            </div>
-            <div className="spots-showMore__container">
-              <button>
-                <span>{`<`}</span>
-              </button>
-              <button>
-                <span>{`>`}</span>
-              </button>
-            </div>
+        <div className="show-title__container">
+          <div className="spots-titles__container">
+            <h3>{`New York`}</h3>
           </div>
-          <div className="main-spots__div-container">
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
-              </div>
-              <div className="div-title__container">{data[1]}</div>
-              <div className="div-description__container">{data[2]}</div>
-              <div className="div-price__container">{data[4]}</div>
-            </div>
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
-              </div>
-              <div className="div-title__container"></div>
-              <div className="div-description__container">{data[12]}</div>
-              <div className="div-price__container">{data[14]}</div>
-            </div>
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
-              </div>
-              <div className="div-title__container">{data[1]}</div>
-              <div className="div-description__container">{data[2]}</div>
-              <div className="div-price__container">{data[4]}</div>
-            </div>
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
-              </div>
-              <div className="div-title__container">{data[1]}</div>
-              <div className="div-description__container">{data[2]}</div>
-              <div className="div-price__container">{data[4]}</div>
-            </div>
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
-              </div>
-              <div className="div-title__container"></div>
-              <div className="div-description__container">{data[12]}</div>
-              <div className="div-price__container">{data[14]}</div>
-            </div>
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
-              </div>
-              <div className="div-title__container">{data[1]}</div>
-              <div className="div-description__container">{data[2]}</div>
-              <div className="div-price__container">{data[4]}</div>
-            </div>
+          <div className="spots-showMore__container">
+            <button>
+              <span>{`<`}</span>
+            </button>
+            <button>
+              <span>{`>`}</span>
+            </button>
           </div>
         </div>
-        <div className="spots-main__container">
-          <div className="show-title__container">
-            <div className="spots-titles__container">
-              <h3>{`Atlanta`}</h3>
-            </div>
-            <div className="spots-showMore__container">
-              <button>
-                <span>{`<`}</span>
-              </button>
-              <button>
-                <span>{`>`}</span>
-              </button>
-            </div>
-          </div>
-          <div className="main-spots__div-container">
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
+        {oneSpot.map((spot) => {
+          return (
+            <div key={spot.id.toString()}>
+              <div className="spots-main__container">
+                <div className="main-spots__div-container">
+                  <div className="div-spots__container">
+                    <div className="div-img__container">
+                      <NavLink to={`/spots/${spot.id}`}>
+                        <img
+                          style={{ width: "253px", height: "168px" }}
+                          src={spot.imageUrl}
+                          alt="avatar"
+                        />
+                      </NavLink>
+                    </div>
+                    <div className="div-title__container">
+                      <h2>{spot.title}</h2>
+                    </div>
+                    <div className="div-description__container">
+                      {spot.description}
+                    </div>
+                    <div className="div-price__container">{spot.price}</div>
+                  </div>
+                </div>
               </div>
-              <div className="div-title__container">{data[1]}</div>
-              <div className="div-description__container">{data[2]}</div>
-              <div className="div-price__container">{data[4]}</div>
             </div>
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
-              </div>
-              <div className="div-title__container"></div>
-              <div className="div-description__container">{data[12]}</div>
-              <div className="div-price__container">{data[14]}</div>
-            </div>
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
-              </div>
-              <div className="div-title__container">{data[1]}</div>
-              <div className="div-description__container">{data[2]}</div>
-              <div className="div-price__container">{data[4]}</div>
-            </div>
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
-              </div>
-              <div className="div-title__container">{data[1]}</div>
-              <div className="div-description__container">{data[2]}</div>
-              <div className="div-price__container">{data[4]}</div>
-            </div>
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
-              </div>
-              <div className="div-title__container"></div>
-              <div className="div-description__container">{data[12]}</div>
-              <div className="div-price__container">{data[14]}</div>
-            </div>
-            <div className="div-spots__container">
-              <div className="div-img__container">
-                <img
-                  style={{ width: "253px", height: "168px" }}
-                  src={
-                    "https://images.unsplash.com/photo-1532048304129-314d4c34fbc4?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MzB8fGV4b3RpYyUyMHBsYWNlc3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                  }
-                  alt="avatar"
-                />
-              </div>
-              <div className="div-title__container">{data[1]}</div>
-              <div className="div-description__container">{data[2]}</div>
-              <div className="div-price__container">{data[4]}</div>
-            </div>
-          </div>
-        </div>
+          );
+        })}
+        ;
       </div>
     </>
   );
