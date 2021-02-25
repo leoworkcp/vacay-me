@@ -6,8 +6,9 @@ import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
 import "./GoogleMaps.css";
 
 const containerStyle = {
+  display: "flex",
   width: "830px",
-  height: "1063px",
+  height: "1076px",
   float: "right",
 };
 
