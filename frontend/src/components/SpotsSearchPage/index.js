@@ -33,6 +33,8 @@ function SpotsSearchPage(spots) {
   //   console.log(spot.id);
   // });
 
+  let count = 0;
+  // console.log(count);
   return (
     <>
       <div className="title-page__container">
@@ -78,33 +80,38 @@ function SpotsSearchPage(spots) {
             </button>
           </div>
         </div>
-        {oneSpot.map((spot) => {
-          return (
-            <div key={spot.id.toString()}>
-              <div className="spots-main__container">
-                <div className="main-spots__div-container">
-                  <div className="div-spots__container">
-                    <div className="div-img__container">
-                      <NavLink to={`/spots/${spot.id}`}>
-                        <img
-                          style={{ width: "253px", height: "168px" }}
-                          src={spot.imageUrl}
-                          alt="avatar"
-                        />
-                      </NavLink>
+        {oneSpot.map((spot, idx) => {
+          idx += 1;
+          count += 1;
+          if (idx !== 1) {
+            return (
+              <div key={spot.id.toString()} id="each-spot">
+                <div className="spots-main__container">
+                  <div className="main-spots__div-container">
+                    <div className="div-spots__container">
+                      <div className="div-img__container">
+                        <NavLink to={`/spots/${spot.id}`}>
+                          <img
+                            id="imageId"
+                            style={{ width: "303px", height: "168px" }}
+                            src={spot.imageUrl}
+                            alt="avatar"
+                          />
+                        </NavLink>
+                      </div>
+                      <div className="div-title__container">
+                        <h2>{spot.title}</h2>
+                      </div>
+                      <div className="div-description__container">
+                        {spot.description}
+                      </div>
+                      <div className="div-price__container">{spot.price}</div>
                     </div>
-                    <div className="div-title__container">
-                      <h2>{spot.title}</h2>
-                    </div>
-                    <div className="div-description__container">
-                      {spot.description}
-                    </div>
-                    <div className="div-price__container">{spot.price}</div>
                   </div>
                 </div>
               </div>
-            </div>
-          );
+            );
+          }
         })}
         ;
       </div>

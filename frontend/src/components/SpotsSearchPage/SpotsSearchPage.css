@@ -33,12 +33,9 @@ h1 {
 .filters-btn__container > div > button {
   width: 174.67px;
   height: 36px;
-  /* margin-left: 10px;
-  margin-top: 25px; */
   display: flex;
   flex-direction: row;
   border-radius: 30px;
-  /* display: block; */
 }
 
 .filters-btn__container > div {
@@ -50,11 +47,6 @@ h1 {
   flex-direction: row;
 }
 
-.spots-main__container {
-  width: 840px;
-  height: 396.88px;
-}
-
 .show-title__container > div {
   margin-left: 10px;
   display: inline-flex;
@@ -63,9 +55,6 @@ h1 {
 
 .spots-titles__container > h3 {
   font-size: 22px;
-  /* font-weight: 600; */
-  margin-left: 10px;
-  margin-top: 45px;
 }
 
 .spots-showMore__container {
@@ -91,39 +80,40 @@ h1 {
 }
 
 /* actual spots */
+.spots-main__container {
+  /* margin-top: 10px;
+  margin-bottom: 10px; */
+}
+
+#each-spot {
+  background-color: transparent;
+  margin-right: 22px;
+
+  text-align: center;
+  width: 320px;
+  height: 285px;
+  display: inline-flex;
+  flex-direction: row;
+}
+
 .main-spots__div-container {
-  width: 960px;
-  /* display: block; */
+  width: 320px;
+  height: 285px;
 }
 
 .div-spots__container {
-  margin-left: 10px;
-  margin-top: 25px;
-  /* display: flex;
-  flex-direction: column; */
+  margin-top: 10px;
 }
 
 .main-spots__div-container {
-  margin-left: 25px;
   display: flex;
   justify-content: space-evenly;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .div-title__container,
 .div-description__container,
 .div-price__container {
-  margin-left: 55px;
   margin-top: 25px;
-  color: red;
-}
-
-.div-spots__container {
-  width: 269.33px;
-  height: 284.88px;
-}
-
-.div-img__container {
-  width: 253.33px;
-  height: 168.88px;
+  color: #f4f1ea;
 }
