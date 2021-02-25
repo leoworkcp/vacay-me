@@ -4,7 +4,44 @@
     no-repeat 0 0;
   background-size: cover;
   z-index: 0;
-  padding-top: 5px;
+  /* padding-top: 5px; */
+  /* backdrop-filter: contrast(0.8); */
+}
+
+.header-black__container {
+  color: rgb(221, 221, 221);
+  width: 1903px;
+  height: 130px;
+  background-color: #000000;
+}
+
+.header-black__container > .secondary-link__container {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: rgb(221, 221, 221);
+  text-align: center;
+}
+
+.secondary-link__container > h2 {
+  padding-top: 40px;
+  font-weight: 600;
+  font-size: xxx-large;
+}
+
+.places-link__container {
+  text-align: right;
+}
+
+.places-link__container > a {
+  display: inline-flex;
+
+  flex-direction: row;
+}
+
+.places-link__container > a > h2 {
+  color: rgb(221, 221, 221);
+  margin-right: 150px;
+  margin-top: 50px;
+  font-size: large;
 }
 
 .homePage-spots__container {
@@ -20,14 +57,18 @@
 }
 
 .homePage-spots__container > h2 {
-  color: aliceblue;
-  padding-top: 10px;
-  font-size: 30px;
+  color: rgb(221, 221, 221);
+  /* padding-top: 5px; */
+
+  font-size: 32px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-align: center;
   transition: all 0.5s ease-in-out;
+  font-weight: 600;
 }
+
 .homePage-spots__container > h2:nth-child(1):hover {
-  padding-top: 25px;
+  padding-top: 23px;
 }
 
 /* secondary pic */
@@ -36,13 +77,21 @@
   font-family: sans-serif;
   background: url("https://images.unsplash.com/photo-1482955903579-70929ba3a509?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjR8fGJlYWNoJTIwaG91c2VzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60")
     no-repeat 0 0;
-  background-size: cover;
+  /* background-size: cover; */
   z-index: 0;
   height: 768px;
 }
-
+.homePage-secondary__container {
+  /* background-color: aquamarine; */
+  transition: all 1s ease-in-out;
+  color: rgb(221, 221, 221);
+}
+.homePage-secondary__container:hover {
+  background-color: rgba(127, 255, 212, 0.233);
+}
 .secondary-spots__container > a > h2 {
-  color: rgba(244, 255, 240, 0.87);
+  color: #000000;
+  font-weight: 650;
   padding-top: 15px;
   font-size: 24px;
   text-align: center;
@@ -52,5 +101,30 @@
 .secondary-spots__container > a > h2:hover {
   padding-top: 10px;
   font-size: 25px;
-  color: #000000;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+}
+
+.footer-black__container {
+  color: rgb(221, 221, 221);
+  width: 1903px;
+  height: 130px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.footer-link__container {
+  padding-top: 50px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+  font-weight: 200;
+}
+
+#github {
+  font-size: x-large;
+  color: rgb(221, 221, 221);
+}
+
+#github:hover {
+  color: #f4f1ea;
 }
