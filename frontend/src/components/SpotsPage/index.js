@@ -9,24 +9,21 @@ function SpotsPage() {
     return state.spots.payload.map((eachSpotId) => state.spots[eachSpotId]);
   });
 
-  let url = window.location.href;
+  let url = window.location.href.split("");
   let count = 0;
-  let currentUrl = [];
+  // console.log(url);
   for (let i = 0; i < url.length; i++) {
     count++;
-    currentUrl.push(url[i]);
-    if (count === 21) break;
+    url.pop(url[i]);
+    if (count === 8) break;
   }
-  // testing YYYYY
-  currentUrl = currentUrl.join("");
+  url = url.join("");
+  // console.log(url);
 
   return (
     <>
-      <div>
-        <h1>TESSSSSTTT</h1>
-      </div>
       {oneSpot.map((spot) => {
-        if (window.location.href === `${currentUrl}/spots/${spot.id}`) {
+        if (window.location.href === `${url}/spots/${spot.id}`) {
           return (
             <div key={spot.id.toString()}>
               <div id="single-spot__container">
