@@ -17,9 +17,8 @@ function SpotsPage() {
     currentUrl.push(url[i]);
     if (count === 21) break;
   }
-
+  // testing YYYYY
   currentUrl = currentUrl.join("");
-  // console.log(currentUrl);
 
   return (
     <>
