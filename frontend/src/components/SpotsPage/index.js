@@ -22,6 +22,9 @@ function SpotsPage() {
 
   return (
     <>
+      <div>
+        <h1>TESSSSSTTT</h1>
+      </div>
       {oneSpot.map((spot) => {
         if (window.location.href === `${currentUrl}/spots/${spot.id}`) {
           return (

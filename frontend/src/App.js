@@ -29,7 +29,7 @@ function App() {
   }, [dispatch]);
 
   // search Page
-  const spotsSearchPage = useSelector((state) => state.spots);
+  // const spotsSearchPage = useSelector((state) => state.spots);
   // console.log(spotsSearchPage);
 
   // user session
@@ -54,11 +54,8 @@ function App() {
           </Route>
           <Route path="/spots" exact>
             <GoogleMap />
-            <SpotsSearchPage spot={spotsSearchPage} />
+            <SpotsSearchPage />
           </Route>
-          {/* {spotsPageList.map(({ title, id }) => {
-            spotId = id;
-          })} */}
           <Route path={["/spots/:eachSpotId"]} exact>
             <SpotsPage />
           </Route>
