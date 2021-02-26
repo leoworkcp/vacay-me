@@ -1,0 +1,112 @@
+#single-spot__container {
+  /* display: inline; */
+  width: 1903px;
+  height: 88px;
+  text-align: center;
+  /* background-color: red; */
+}
+
+#single-spot__container > a > h1 {
+  font-size: x-large;
+  font-weight: 600;
+  color: #f4f1ea;
+}
+#title {
+  margin: 0;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+.multiple-spot__imgContainers {
+  display: flex;
+  /* width: 1903px; */
+  height: 417px;
+  /* background-color: black; */
+  justify-content: center;
+}
+.multiple-spot__imgContainers .single-big__imgContainers {
+  padding: 5px;
+}
+
+.multiple-spot__imgContainers .single-tiny__imgContainers {
+  padding: 5px;
+}
+.multiple-spot__imgContainers .single2-tiny__imgContainers {
+  padding: 5px;
+}
+.single-big__imgContainers {
+  width: 564px;
+  height: 417px;
+
+  /* background-color: aqua; */
+}
+
+.single-big__imgContainers > img {
+  border-radius: 40px 10px 10px 40px;
+}
+
+.single-tiny__imgContainers > img {
+  border-radius: 10px;
+}
+.single2-tiny__imgContainers > img {
+  border-radius: 10px 40px 40px 10px;
+}
+
+#tiny-pic_container {
+  height: 395px;
+  flex-direction: row;
+}
+
+.single-tiny__imgContainers {
+  /* background-color: blueviolet; */
+  width: 274px;
+  height: 208px;
+  justify-content: space-evenly;
+}
+
+#tiny2-pic_container {
+  height: 395px;
+  flex-direction: row;
+}
+
+.single2-tiny__imgContainers {
+  /* background-color: blueviolet; */
+  width: 274px;
+  height: 208px;
+  justify-content: space-evenly;
+}
+
+.spot-information__container {
+  color: #f4f1ea;
+  display: flex;
+  /* background-color: chocolate; */
+  justify-content: center;
+}
+
+.main-info-container {
+  display: flex;
+  /* justify-content: center; */
+  width: 1112px;
+  height: 417px;
+  flex-direction: column;
+  margin-top: 22px;
+}
+
+#description {
+  margin-top: 22px;
+  height: fit-content;
+  /* color: red; */
+  font-size: x-large;
+}
+#hostedDate,
+#price,
+#location {
+  margin-top: 22px;
+  height: fit-content;
+  /* color: red; */
+  font-size: large;
+}
+
+/* img {
+  border-radius: 30px;
+} */

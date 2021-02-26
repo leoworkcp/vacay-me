@@ -19,8 +19,6 @@ h1 {
   display: block;
   flex-direction: column;
   color: #1d1d1f;
-  width: 840px;
-  height: 180;
 }
 .filters-btn__container > div > button > span {
   width: 174.67px;
