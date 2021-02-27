@@ -36,7 +36,7 @@ function ReviewPage() {
     return state.reviews.payload.map((eachSpotId) => state.reviews[eachSpotId]);
   });
 
-  console.log(oneSpot);
+  // console.log(oneSpot);
 
   // console.log(description);
   // console.log(createdAt);
