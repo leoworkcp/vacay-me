@@ -3,38 +3,40 @@ import React, { useState, useEffect } from "react";
 import "./SpotsPage.css";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink, useParams } from "react-router-dom";
-
-import { getOnespot } from "../../store/spotPageReducer";
+import ReviewPage from "../Reviews";
+import { getOneReview } from "../../store/reviewPageReducer";
 
 function SpotsPage() {
   const { eachSpotId } = useParams();
 
-  // const dispatch = useDispatch();
-  // useEffect(() => {});
+  // new review by ID TEST
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    dispatch(getOneReview(eachSpotId));
+  }, [dispatch, eachSpotId]);
+
+  // const reviews = useSelector((state) => state.reviews);
+  // console.log(reviews);
+
+  // each spot
   const oneSpot = useSelector((state) => {
     return state.spots.payload.map((eachSpotId) => state.spots[eachSpotId]);
   });
+  // const reviews = useSelector((state) => state.reviews);
   const spots = useSelector((state) => state.spots);
-  // console.log(spots[eachSpotId]);
-
-  const [showAddReviewBtn, SetShowAddReviewBtn] = useState(false);
-
-  // let cc = /^a$/;
-  // function matchExact(r, str) {
-  //   let match = str.match(r);
-  //   return match && str === match[0];
-  // }
-  // // console.log(r === matchExact("a"));
-
+  // const payload = useSelector((state) => state.spots.payload);
+  // console.log(payload);
   let id = spots[eachSpotId].id;
-  // console.log(id);
   let title = spots[eachSpotId].title;
   let img = spots[eachSpotId].imageUrl;
   let location = spots[eachSpotId].location;
   let price = spots[eachSpotId].price;
   let description = spots[eachSpotId].description;
   let hostedDate = spots[eachSpotId].hostedDate;
+
+  // let reviewDescription = reviews[eachSpotId].description;
+  // console.log(reviewDescription);
 
   if (!oneSpot) {
     return null;
@@ -91,7 +93,7 @@ function SpotsPage() {
         </div>
         <div
           className="spot-information__container"
-          style={{ height: "2074px" }}
+          style={{ height: "500px" }}
         >
           <div className="main-info-container">
             <h2 id="location"> {location}</h2>
@@ -101,6 +103,7 @@ function SpotsPage() {
           </div>
         </div>
       </div>
+      <ReviewPage />
     </>
   );
 }

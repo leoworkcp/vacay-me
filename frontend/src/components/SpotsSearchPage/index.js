@@ -7,34 +7,13 @@ import "./SpotsSearchPage.css";
 function SpotsSearchPage(spots) {
   // const { eachSpotId } = useParams();
 
-  // const visit = (obj, fn) => {
-  //   const values = Object.values(obj);
-  //   // const keys = Object.keys(obj);
-  //   values.forEach((val) =>
-  //     //  data.push(val)
-  //     val && typeof val === "object" ? visit(val, fn) : data.push(val)
-  //   );
-  //   // keys.forEach((val1) =>
-  //   //   val1 && typeof val1 === "object" ? visit(val1, fn) : fn(val1)
-  //   // );
-  // };
-  // // Quick test
-  // const print = (val) => console.log(val);
-  // visit(spots, print);
   const oneSpot = useSelector((state) => {
     return state.spots.payload.map((eachSpotId) => state.spots[eachSpotId]);
   });
-
-  // important logs
-  // console.log(spots);
-  // console.log(oneSpot);
-  // let spotId = {};
-  // oneSpot.map((spot) => {
-  //   console.log(spot.id);
-  // });
-
+  // const a = useSelector((state) => state.spots.payload);
+  // console.log(a);
   let count = 0;
-  // console.log(count);
+
   return (
     <>
       <div className="title-page__container">
@@ -83,7 +62,7 @@ function SpotsSearchPage(spots) {
         {oneSpot.map((spot, idx) => {
           idx += 1;
           count += 1;
-          if (idx !== 1) {
+          if (idx !== 0) {
             return (
               <div key={spot.id.toString()} id="each-spot">
                 <div className="spots-main__container">

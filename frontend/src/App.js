@@ -2,9 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import * as sessionActions from "./store/session";
 
+import * as sessionActions from "./store/session";
+// main Page
 import * as spotPageActions from "./store/spotPageReducer";
+
+import ReviewPage from "./components/Reviews";
 
 import SignupFormPage from "./components/SignupFormPage";
 import SignupFormHost from "./components/SignupFormHost";
@@ -19,18 +22,11 @@ import "./index.css";
 function App() {
   const dispatch = useDispatch();
 
-  // spotPage
-  const spotsPageList = useSelector((state) => state.spots.payload);
-  // console.log(spotsPageList);
   const [isSpotPage, setIsSpotPage] = useState(false);
 
   useEffect(() => {
     dispatch(spotPageActions.getOnespot()).then(() => setIsSpotPage(true));
   }, [dispatch]);
-
-  // search Page
-  // const spotsSearchPage = useSelector((state) => state.spots);
-  // console.log(spotsSearchPage);
 
   // user session
   const [isLoaded, setIsLoaded] = useState(false);
@@ -38,10 +34,16 @@ function App() {
     dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+  // const spotsSearchPage = useSelector((state) => state.spots);
+
   return (
     <>
-      <Navigation isLoaded={isLoaded} isSpotPage={isSpotPage} />
-      {isLoaded && isSpotPage && (
+      <Navigation
+        isLoaded={isLoaded}
+        // isSpotPage={isSpotPage}
+        // isReviewPage={isReviewPage}
+      />
+      {isLoaded && (
         <Switch>
           <Route path="/" exact>
             <HomePage />
