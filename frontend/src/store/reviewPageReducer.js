@@ -1,8 +1,8 @@
 const LOAD = "reviews/LOAD";
 
-const load = (payload) => ({
+const load = (list) => ({
   type: LOAD,
-  payload,
+  list,
 });
 
 export const getOneReview = (id) => async (dispatch) => {
@@ -34,13 +34,13 @@ const reviewPageReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD:
       const allReviews = {};
-      action.payload.forEach((review) => {
+      action.list.forEach((review) => {
         allReviews[review.id] = review;
       });
       return {
         ...allReviews,
         ...state,
-        payload: sortList(action.payload),
+        list: sortList(action.list),
       };
 
     default:
