@@ -49,9 +49,12 @@
 
 .profile-main__container > img {
   position: relative;
+  width: 50px;
+  height: 50px;
   bottom: 70px;
   border-radius: 49.99999%;
   float: right;
+  /* margin-right: 30px; */
 }
 
 .logout-btn {

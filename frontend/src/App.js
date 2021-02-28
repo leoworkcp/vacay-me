@@ -7,8 +7,7 @@ import * as sessionActions from "./store/session";
 // main Page
 import * as spotPageActions from "./store/spotPageReducer";
 
-import ReviewPage from "./components/Reviews";
-
+// import ReviewPage from "./components/Reviews";
 import SignupFormPage from "./components/SignupFormPage";
 import SignupFormHost from "./components/SignupFormHost";
 import HomePage from "./components/HomePage";
@@ -38,11 +37,8 @@ function App() {
 
   return (
     <>
-      <Navigation
-        isLoaded={isLoaded}
-        // isSpotPage={isSpotPage}
-        // isReviewPage={isReviewPage}
-      />
+      <Navigation isLoaded={isLoaded} />
+
       {isLoaded && (
         <Switch>
           <Route path="/" exact>

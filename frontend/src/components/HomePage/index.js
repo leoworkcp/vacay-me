@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import { useDispatch, useSelector } from "react-redux";
 
+import SearchBar from "../SearchBar";
 import "./HomePage.css";
 import { NavLink, Redirect } from "react-router-dom";
 function HomePage() {
@@ -22,6 +23,7 @@ function HomePage() {
             <h2>to</h2>
             <h2>Vacay</h2>
             <h2>Me</h2>
+            <SearchBar />
           </div>
         </div>
         <div className="homePage-spots__container">
