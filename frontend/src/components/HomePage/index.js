@@ -7,7 +7,7 @@ function HomePage() {
   return (
     <>
       <div className="homePage-main__container">
-        <div className="header-black__container">
+        <div className="header-black1__container">
           <div className="places-link__container">
             <NavLink to="/spots">
               <h2>Places to stay</h2>

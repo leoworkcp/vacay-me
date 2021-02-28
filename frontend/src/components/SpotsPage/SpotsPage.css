@@ -77,17 +77,20 @@
 }
 
 .spot-information__container {
-  color: #f4f1ea;
+  background-color: rgba(245, 222, 179, 0.76);
+  /* color: #f4f1ea; */
+  color: black;
   display: flex;
   /* background-color: chocolate; */
   justify-content: center;
+  /* height: 380px; */
 }
 
 .main-info-container {
   display: flex;
   /* justify-content: center; */
   width: 1112px;
-  height: 417px;
+  height: fit-content;
   flex-direction: column;
   margin-top: 22px;
 }

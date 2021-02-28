@@ -43,6 +43,8 @@ function ReviewPage() {
     return state.reviews.list.map((eachSpotId) => state.reviews[eachSpotId]);
   });
 
+  const reviewIS = useSelector((state) => state.reviews.list);
+
   // console.log(oneSpot);
 
   // console.log(description);
@@ -50,20 +52,37 @@ function ReviewPage() {
 
   // console.log(created);
 
+  console.log(oneReview.length);
+
+  let reviewTitle;
+  if (oneReview.length > 0) {
+    reviewTitle = (
+      <div className="title-reviews_container" id="reviews-title">
+        <div className="main-review-title">
+          <h1>Reviews</h1>
+        </div>
+      </div>
+    );
+  }
   return (
     <>
-      <div className="testing">
-        <h1></h1>
-        <h1></h1>
-      </div>
+      {reviewTitle}
       {oneReview.map((review, idx) => {
         idx += 1;
         count += 1;
         if (idx !== 0) {
           return (
-            <div key={review.id}>
-              <h1>{review.description}</h1>
-              <h2>{review.username}</h2>
+            <div key={review.id} className="reviews-main_container">
+              <div id="reviews">
+                <h2 className="reviews-description_container">
+                  {review.description}
+                </h2>
+                <NavLink to={`/profile/${review.userId}`}>
+                  <h2 className="reviews-username_container">
+                    {review.username}
+                  </h2>
+                </NavLink>
+              </div>
             </div>
           );
         }

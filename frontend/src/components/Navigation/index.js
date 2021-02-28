@@ -15,8 +15,12 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
-        <NavLink to="/host/signup">Become a Host</NavLink>
+        <NavLink to="/signup" id="signup-btn">
+          Sign Up
+        </NavLink>
+        <NavLink to="/host/signup" id="hostSignup-btn">
+          Become a Host
+        </NavLink>
       </>
     );
   }
@@ -24,7 +28,7 @@ function Navigation({ isLoaded }) {
   return (
     <ul>
       <li>
-        <NavLink exact to="/">
+        <NavLink exact to="/" id="home-btn">
           Home
         </NavLink>
         {isLoaded && sessionLinks}

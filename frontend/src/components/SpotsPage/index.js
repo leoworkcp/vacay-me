@@ -93,7 +93,7 @@ function SpotsPage() {
         </div>
         <div
           className="spot-information__container"
-          style={{ height: "500px" }}
+          style={{ height: "380px" }}
         >
           <div className="main-info-container">
             <h2 id="location"> {location}</h2>
