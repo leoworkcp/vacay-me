@@ -11,7 +11,7 @@ function SpotsSearchPage(spots) {
     return state.spots.payload.map((eachSpotId) => state.spots[eachSpotId]);
   });
   // const a = useSelector((state) => state.spots.payload);
-  // console.log(a);
+  console.log(oneSpot);
   let count = 0;
 
   return (

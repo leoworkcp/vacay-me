@@ -76,3 +76,44 @@
   margin-top: 20px;
   cursor: pointer;
 }
+
+/* search Bar */
+
+.autocom-box {
+  /* padding: 10px 8px; */
+  max-height: 280px;
+  overflow-y: scroll;
+  /* opacity: 0; */
+  /* pointer-events: none; */
+}
+
+.autocom-box li {
+  list-style: none;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  /* display: none; */
+}
+.autocom-box li:hover {
+  background: #efefef;
+}
+
+.autocom-box {
+  top: 100px;
+  position: absolute;
+  background-color: white;
+}
+
+#searchText {
+  display: flex;
+  color: black;
+}
+
+#spotsList {
+  background-color: #efefef;
+  width: 450px;
+  border-radius: 3px;
+  position: fixed;
+  overflow-y: scroll;
+}

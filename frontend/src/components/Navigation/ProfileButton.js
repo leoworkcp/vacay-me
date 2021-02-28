@@ -28,7 +28,7 @@ function ProfileButton({ user }) {
     e.preventDefault();
     dispatch(sessionActions.logout());
   };
-  console.log(user);
+  // console.log(user);
   return (
     <>
       <button onClick={openMenu} id="users-main-btn">
