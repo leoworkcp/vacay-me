@@ -115,3 +115,8 @@ h1 {
   margin-top: 25px;
   color: #f4f1ea;
 }
+
+#map-marker__title {
+  background-color: transparent;
+  cursor: pointer;
+}

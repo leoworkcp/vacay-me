@@ -134,7 +134,7 @@
   /* margin-bottom: 10px; */
   /* background-color: #efefef41; */
 
-  background-color: #0000009a;
+  background-color: #00000052;
   /* width: 450px; */
   border-radius: 40px;
   position: absolute;
@@ -142,19 +142,19 @@
 }
 
 .dropdown__search-bar {
-  background-color: #efefef34;
+  background-color: #efefefbb;
   border-radius: 40px;
 }
 
 .popUp-search__anchor {
   /* margin-left: 10px; */
-  color: #efefef;
+  color: #0f0f0f;
   display: flex;
   width: 328px;
   justify-content: center;
   min-height: 20px;
   text-align: center;
-  padding-top: 9px;
+  padding-top: 12px;
   /* padding-left: 7px;  */
   /* margin-right: 10px; */
 }

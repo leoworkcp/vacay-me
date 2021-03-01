@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useParams } from "react-router-dom";
+import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+
+import * as marker from "../GoogleMaps";
 
 import "./SpotsSearchPage.css";
 
@@ -13,8 +16,24 @@ function SpotsSearchPage(spots) {
   // const a = useSelector((state) => state.spots.payload);
   console.log(oneSpot);
   let count = 0;
+  let obj = {};
+  obj.lat = "";
+  obj.lng = "";
 
-  return (
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: "AIzaSyAtcYQfB1b70oIkfPDXygEN9pt3WPDR_GY",
+  });
+
+  console.log(marker.center);
+  obj.lat = marker.center.lat;
+  obj.lng = 222;
+  // console.log(obj);
+  // marker.center.lat = obj.lat;
+  // marker.center.lng = obj.lng;
+  console.log(marker.center);
+
+  return isLoaded ? (
     <>
       <div className="title-page__container">
         <div className="title-main__container">
@@ -79,7 +98,16 @@ function SpotsSearchPage(spots) {
                         </NavLink>
                       </div>
                       <div className="div-title__container">
-                        <h2>{spot.title}</h2>
+                        <button
+                          id="map-marker__title"
+                          onClick={() => {
+                            marker.center.lat = obj.lat;
+                            marker.center.lng = obj.lng;
+                            console.log(marker.center);
+                          }}
+                        >
+                          <h2>{spot.title}</h2>
+                        </button>
                       </div>
                       <div className="div-description__container">
                         {spot.description}
@@ -95,6 +123,8 @@ function SpotsSearchPage(spots) {
         ;
       </div>
     </>
+  ) : (
+    <></>
   );
 }
 
