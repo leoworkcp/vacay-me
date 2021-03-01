@@ -8,6 +8,7 @@ import * as sessionActions from "./store/session";
 import * as spotPageActions from "./store/spotPageReducer";
 
 // import ReviewPage from "./components/Reviews";
+// import ExampleSearchBox from "./components/ExampleSearchBox";
 import SignupFormPage from "./components/SignupFormPage";
 import SignupFormHost from "./components/SignupFormHost";
 import HomePage from "./components/HomePage";
