@@ -58,23 +58,25 @@ function LoginForm() {
                 required
               />
             </label>
-            <button type="submit" className="submit-login__btn">
-              Log In
-            </button>
-            <button
-              type="submit"
-              className="demo-login__btn"
-              onClick={() => demoUser(email2, userPw2)}
-            >
-              Demo-User
-            </button>
-            <button
-              type="submit"
-              className="demo-login__btn"
-              onClick={() => demoUser(email1, userPw1)}
-            >
-              Demo-Host
-            </button>
+            <div className="btn-modalForm__conatiner">
+              <button type="submit" className="submit-login__btn">
+                Log In
+              </button>
+              <button
+                type="submit"
+                className="demo-login__btn"
+                onClick={() => demoUser(email2, userPw2)}
+              >
+                Demo-User
+              </button>
+              <button
+                type="submit"
+                className="demo-login__btn"
+                onClick={() => demoUser(email1, userPw1)}
+              >
+                Demo-Host
+              </button>
+            </div>
           </form>
         </div>
       </div>

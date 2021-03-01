@@ -1,2 +1,8 @@
 .maps-main__container {
 }
+
+.spots-markers__container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10px;
+}

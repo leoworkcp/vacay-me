@@ -51,7 +51,7 @@ function MyComponent() {
   const oneSpot = useSelector((state) => {
     return state.spots.payload.map((eachSpotId) => state.spots[eachSpotId]);
   });
-  console.log(oneSpot);
+
   let state = {
     adress: "",
     city: "",
@@ -201,7 +201,9 @@ function MyComponent() {
                     onClick={() => setZoom(15)}
                   >
                     <InfoWindow>
-                      <div>{spot.name}</div>
+                      <div className="spots-markers__container">
+                        {spot.name}
+                      </div>
                     </InfoWindow>
                     {/* <InfoBox position={spot.location}>
                       <div></div>

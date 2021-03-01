@@ -109,6 +109,20 @@ h1 {
   overflow-y: scroll;
 }
 
+.main-spots__div-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.main-spots__div-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.main-spots__div-container::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
 .div-title__container,
 .div-description__container,
 .div-price__container {

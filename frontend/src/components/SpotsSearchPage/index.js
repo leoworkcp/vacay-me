@@ -14,7 +14,7 @@ function SpotsSearchPage(spots) {
     return state.spots.payload.map((eachSpotId) => state.spots[eachSpotId]);
   });
   // const a = useSelector((state) => state.spots.payload);
-  console.log(oneSpot);
+  // console.log(oneSpot);
   let count = 0;
   let obj = {};
   obj.lat = "";
@@ -25,13 +25,13 @@ function SpotsSearchPage(spots) {
     googleMapsApiKey: "AIzaSyAtcYQfB1b70oIkfPDXygEN9pt3WPDR_GY",
   });
 
-  console.log(marker.center);
+  // console.log(marker.center);
   obj.lat = marker.center.lat;
   obj.lng = 222;
   // console.log(obj);
   // marker.center.lat = obj.lat;
   // marker.center.lng = obj.lng;
-  console.log(marker.center);
+  // console.log(marker.center);
 
   return isLoaded ? (
     <>
