@@ -8,7 +8,7 @@ function HomePage() {
   let rN = Math.floor(Math.random() * 10) + 1;
 
   const oneSpot = useSelector((state) => {
-    return state.spots.payload.map((eachSpotId) => state.spots[eachSpotId]);
+    return state?.spots?.payload.map((eachSpotId) => state?.spots[eachSpotId]);
   });
   let lat;
   let lon;

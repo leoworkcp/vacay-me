@@ -55,6 +55,9 @@ function SearchBar() {
                 <>
                   <div className="dropdown__search-bar" id="spotsSearch">
                     <li id="searchText">
+                      {deal.map((mapped) => {
+                        console.log(mapped);
+                      })}
                       {[
                         <NavLink
                           id="searchText-anchor"
@@ -100,14 +103,16 @@ function SearchBar() {
               let value = e.target.value.length;
               if (value < 3) setUse(test(use));
               else {
-                setUse(searchBar());
+                setUse(searchBar(use));
               }
             }}
           ></input>
           <div className="search-bar" id="search">
             <div className="search-input">
               <div className="autocom-box">
-                <ul id="spotsList">{use}</ul>
+                <ul id="spotsList">
+                  {use}
+                </ul>
               </div>
             </div>
           </div>

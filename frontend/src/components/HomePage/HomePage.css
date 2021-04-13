@@ -3,7 +3,8 @@
   background: url("https://images.unsplash.com/photo-1535961652354-923cb08225a7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZXhvdGljJTIwcGxhY2VzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60")
     no-repeat 0 0;
   background-size: cover;
-
+  display: flex;
+  flex-wrap: wrap;
   z-index: 0;
   /* padding-top: 5px; */
   /* backdrop-filter: contrast(0.8); */
@@ -24,6 +25,12 @@
   background-color: #000000e5;
 }
 
+/* .secondary-link__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} */
+
 .header-black__container > .secondary-link__container {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: rgb(221, 221, 221);
@@ -36,6 +43,9 @@
   padding-top: 30px;
   font-weight: 600;
   font-size: xxx-large;
+  display: inline-flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
 }
 
 .places-link__container {
