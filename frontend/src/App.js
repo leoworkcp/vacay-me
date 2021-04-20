@@ -25,13 +25,13 @@ function App() {
   const [isSpotPage, setIsSpotPage] = useState(false);
 
   useEffect(() => {
-    dispatch(spotPageActions.getOnespot()).then(() => setIsSpotPage(true));
+    dispatch(spotPageActions.getOnespot())?.then(() => setIsSpotPage(true));
   }, [dispatch]);
 
   // user session
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    dispatch(sessionActions.restoreUser()).then(() => setIsLoaded(true));
+    dispatch(sessionActions.restoreUser())?.then(() => setIsLoaded(true));
   }, [dispatch]);
 
   // const spotsSearchPage = useSelector((state) => state.spots);

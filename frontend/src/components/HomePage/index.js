@@ -8,7 +8,7 @@ function HomePage() {
   let rN = Math.floor(Math.random() * 10) + 1;
 
   const oneSpot = useSelector((state) => {
-    return state?.spots?.payload.map((eachSpotId) => state?.spots[eachSpotId]);
+    return state?.spots?.payload?.map((eachSpotId) => state?.spots[eachSpotId]);
   });
   let lat;
   let lon;
@@ -76,14 +76,14 @@ function HomePage() {
               <div className="each-nearby__links">
                 <NavLink
                   className="picsExplore-anchor_links"
-                  to={`/spots/${oneSpot[0].id}`}
+                  to={`/spots/${oneSpot[0]?.id}`}
                 >
                   <img
                     id="explore-nearby__img"
-                    src={oneSpot[0].imageUrl}
+                    src={oneSpot[0]?.imageUrl}
                     alt="avatar"
                   />
-                  <p>${oneSpot[0].price}</p>
+                  <p>${oneSpot[0]?.price}</p>
                 </NavLink>
               </div>
             </div>
@@ -91,14 +91,14 @@ function HomePage() {
               <div className="each-nearby__links">
                 <NavLink
                   className="picsExplore-anchor_links"
-                  to={`/spots/${oneSpot[5].id}`}
+                  to={`/spots/${oneSpot[5]?.id}`}
                 >
                   <img
                     id="explore-nearby__img"
-                    src={oneSpot[5].imageUrl}
+                    src={oneSpot[5]?.imageUrl}
                     alt="avatar"
                   />
-                  <p>${oneSpot[5].price}</p>
+                  <p>${oneSpot[5]?.price}</p>
                 </NavLink>
               </div>
             </div>
@@ -106,14 +106,14 @@ function HomePage() {
               <div className="each-nearby__links">
                 <NavLink
                   className="picsExplore-anchor_links"
-                  to={`/spots/${oneSpot[4].id}`}
+                  to={`/spots/${oneSpot[4]?.id}`}
                 >
                   <img
                     id="explore-nearby__img"
-                    src={oneSpot[4].imageUrl}
+                    src={oneSpot[4]?.imageUrl}
                     alt="avatar"
                   />
-                  <p>${oneSpot[4].price}</p>
+                  <p>${oneSpot[4]?.price}</p>
                 </NavLink>
               </div>
             </div>
@@ -121,14 +121,14 @@ function HomePage() {
               <div className="each-nearby__links">
                 <NavLink
                   className="picsExplore-anchor_links"
-                  to={`/spots/${oneSpot[2].id}`}
+                  to={`/spots/${oneSpot[2]?.id}`}
                 >
                   <img
                     id="explore-nearby__img"
-                    src={oneSpot[2].imageUrl}
+                    src={oneSpot[2]?.imageUrl}
                     alt="avatar"
                   />
-                  <p>${oneSpot[2].price}</p>
+                  <p>${oneSpot[2]?.price}</p>
                 </NavLink>
               </div>
             </div>
@@ -136,14 +136,14 @@ function HomePage() {
               <div className="each-nearby__links">
                 <NavLink
                   className="picsExplore-anchor_links"
-                  to={`/spots/${oneSpot[3].id}`}
+                  to={`/spots/${oneSpot[3]?.id}`}
                 >
                   <img
                     id="explore-nearby__img"
-                    src={oneSpot[3].imageUrl}
+                    src={oneSpot[3]?.imageUrl}
                     alt="avatar"
                   />
-                  <p>${oneSpot[3].price}</p>
+                  <p>${oneSpot[3]?.price}</p>
                 </NavLink>
               </div>
             </div>
@@ -151,14 +151,14 @@ function HomePage() {
               <div className="each-nearby__links">
                 <NavLink
                   className="picsExplore-anchor_links"
-                  to={`/spots/${oneSpot[9].id}`}
+                  to={`/spots/${oneSpot[9]?.id}`}
                 >
                   <img
                     id="explore-nearby__img"
-                    src={oneSpot[9].imageUrl}
+                    src={oneSpot[9]?.imageUrl}
                     alt="avatar"
                   />
-                  <p>${oneSpot[9].price}</p>
+                  <p>${oneSpot[9]?.price}</p>
                 </NavLink>
               </div>
             </div>
