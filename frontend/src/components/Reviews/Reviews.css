@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   height: fit-content;
-  width: 1903px;
+  width: 100%;
   /* padding-left: 400px; */
   margin-bottom: 50px;
   /* text-align: center; */
@@ -11,7 +11,7 @@
 
 .main-review-title {
   /* text-align: center; */
-  width: 1112px;
+  max-width: 1112px;
   flex-direction: row;
 }
 
@@ -31,7 +31,7 @@
 }
 .reviews-description_container {
   flex-direction: column;
-  width: 1112px;
+  max-width: 1112px;
   font-weight: 600;
   color: #f4f1ea;
   font-size: large;

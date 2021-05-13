@@ -44,7 +44,7 @@ function SpotsPage() {
 
   return (
     <>
-      <div key={id.toString()}>
+      <div key={id.toString()} className="container_each_rent">
         <div id="single-spot__container">
           <NavLink to={`/spots/${id}`}>
             <h1 id="title">{title}</h1>
